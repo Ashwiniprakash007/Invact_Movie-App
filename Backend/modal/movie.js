@@ -8,7 +8,7 @@ const movieSchema = new Schema({
   releaseYear: { type: Number, required: true },
   genre: { type: String, required: true },
   watchStatus: { type: Boolean, default: false },
-  rating: { type: Number, min: 0, max: 10 },
+  rating: { type: Number, min: 0, max: 5 },
   reviews: { type: String }
 });
 

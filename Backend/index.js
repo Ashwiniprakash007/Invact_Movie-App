@@ -1,11 +1,12 @@
 const express = require("express");
 require('dotenv').config();
-// const cors = require("cors");
+const cors = require("cors");
 const connection = require("./config/db");
 const movieRoutes = require('./routes/movies.route');
 
 const app = express();
 app.use(express.json());
+app.use(cors());
 
 // Home route
 app.get("/", (req, res) => {
@@ -16,7 +17,7 @@ app.get("/", (req, res) => {
 app.use('/movies', movieRoutes);
 
 // Start server
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT ;
 app.listen(PORT, async () => {
     try {
         await connection;

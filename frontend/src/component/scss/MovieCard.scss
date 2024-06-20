@@ -1,0 +1,85 @@
+// components/scss/MovieCard.scss
+.movie-card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    padding: 20px;
+    transition: transform 0.2s;
+  
+    &:hover {
+      transform: translateY(-5px);
+    }
+  
+    h3 {
+      font-size: 1.5em;
+      margin-bottom: 10px;
+    }
+  
+    p {
+      font-size: 1em;
+      margin-bottom: 10px;
+      line-height: 1.4;
+    }
+  
+    .buttons {
+      display: flex;
+      justify-content: space-between;
+  
+      button {
+        background: #007bff;
+        border: none;
+        border-radius: 5px;
+        color: #fff;
+        cursor: pointer;
+        padding: 10px 15px;
+        font-size: 0.9em;
+        transition: background 0.3s;
+  
+        &:hover {
+          background: #0056b3;
+        }
+  
+        &:nth-child(2) {
+          background: #dc3545;
+  
+          &:hover {
+            background: #c82333;
+          }
+        }
+  
+        &:nth-child(3) {
+          background: #28a745;
+  
+          &:hover {
+            background: #218838;
+          }
+        }
+      }
+    }
+  }
+// components/scss/MovieList.scss
+.movie-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
+    justify-content: center;
+  
+    button {
+      background: #28a745;
+      border: none;
+      border-radius: 5px;
+      color: white;
+      cursor: pointer;
+      font-size: 1em;
+      padding: 10px 20px;
+      margin-bottom: 20px;
+      transition: background 0.3s;
+  
+      &:hover {
+        background: #218838;
+      }
+    }
+  }
+    

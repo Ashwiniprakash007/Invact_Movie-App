@@ -60,19 +60,23 @@ router.delete('/:id', async (req, res) => {
   try {
     const movie = await Movie.findById(req.params.id);
     if (!movie) return res.status(404).json({ message: 'Movie not found' });
-    await movie.remove();
+    
+    await Movie.findByIdAndDelete(req.params.id);
     res.json({ message: 'Movie deleted' });
   } catch (err) {
     res.status(500).json({ message: err.message });
   }
 });
 
-// Mark as watched/unwatched
+
+// PATCH /movies/:id/watchStatus
 router.patch('/:id/watchStatus', async (req, res) => {
   try {
     const movie = await Movie.findById(req.params.id);
     if (!movie) return res.status(404).json({ message: 'Movie not found' });
-    movie.watchStatus = req.body.watchStatus;
+
+    movie.watchStatus = req.body.watchStatus; // Assuming watchStatus is a boolean field
+
     await movie.save();
     res.json(movie);
   } catch (err) {
